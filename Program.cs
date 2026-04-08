@@ -15,7 +15,9 @@ namespace MapSentinel
     {
         FileSystemWatcher watcher;
         NotifyIcon tray;
-
+		
+		bool isExit = false;
+		
         CheckBox autoStartChk, popupChk, notifyChk;
 
         string downloads = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), "Downloads");
@@ -59,10 +61,17 @@ namespace MapSentinel
 
             var menu = new ContextMenuStrip();
             menu.Items.Add("열기", null, (s, e) => { Show(); WindowState = FormWindowState.Normal; });
-            menu.Items.Add("종료", null, (s, e) => { tray.Visible = false; Application.Exit(); });
+            menu.Items.Add("종료", null, (s, e) => {
 
-            tray.ContextMenuStrip = menu;
-        }
+			isExit = true;
+			watcher?.Dispose();
+			tray.Visible = false;
+			Application.ExitThread();
+			Application.Exit();
+		});
+		
+		tray.ContextMenuStrip = menu;
+		}
 
         void StartWatching()
         {
@@ -267,11 +276,24 @@ namespace MapSentinel
                 rk.DeleteValue("MapSentinel", false);
         }
 
-        protected override void OnFormClosing(FormClosingEventArgs e)
-        {
-            e.Cancel = true;
-            Hide();
-        }
+		protected override void OnFormClosing(FormClosingEventArgs e)
+		{
+			if (!isExit)
+		{
+			e.Cancel = true;
+			Hide();
+		}
+			else
+		{
+			tray.Visible = false;
+			}
+
+			base.OnFormClosing(e);
+}
+        
+        
+        
+        
 
         void Log(string msg)
         {

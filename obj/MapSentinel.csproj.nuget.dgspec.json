@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\musek\\OneDrive\\바탕 화면\\MapSentinel\\MapSentinel.csproj": {}
+    "C:\\Users\\musek\\Downloads\\MapSentinel-main\\MapSentinel-main\\MapSentinel.csproj": {}
   },
   "projects": {
-    "C:\\Users\\musek\\OneDrive\\바탕 화면\\MapSentinel\\MapSentinel.csproj": {
+    "C:\\Users\\musek\\Downloads\\MapSentinel-main\\MapSentinel-main\\MapSentinel.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\musek\\OneDrive\\바탕 화면\\MapSentinel\\MapSentinel.csproj",
+        "projectUniqueName": "C:\\Users\\musek\\Downloads\\MapSentinel-main\\MapSentinel-main\\MapSentinel.csproj",
         "projectName": "MapSentinel",
-        "projectPath": "C:\\Users\\musek\\OneDrive\\바탕 화면\\MapSentinel\\MapSentinel.csproj",
+        "projectPath": "C:\\Users\\musek\\Downloads\\MapSentinel-main\\MapSentinel-main\\MapSentinel.csproj",
         "packagesPath": "C:\\Users\\musek\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\musek\\OneDrive\\바탕 화면\\MapSentinel\\obj\\",
+        "outputPath": "C:\\Users\\musek\\Downloads\\MapSentinel-main\\MapSentinel-main\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
